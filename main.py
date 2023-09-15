@@ -1,18 +1,26 @@
 from flask import Flask,render_template
 import requests
-from config import API_KEY
+from file import API_KEY
 
 
 
 
 app = Flask(__name__)
 
+link = f"http://api.currencylayer.com/live?access_key={API_KEY}&format=1&currencies=RUB"
+
 
 @app.route("/")
 def index():
 
-    r = requests.get('https://api.currencylayer.com/live?access_key={API_KEY}')
+    r = requests.get(link)
     print(r.status_code)
+    print(r.json())
+  
+
+
+    # https://api.currencylayer.com/list
+    # ? access_key = a2c0e34ad25ba7bfade4297569d65b12
   
     # r.headers['content-type']
     # 'application/json; charset=utf8'
