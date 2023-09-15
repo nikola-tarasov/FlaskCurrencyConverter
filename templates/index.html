@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }} {% endblock%}
+
+{% block main %}
+<h1>Конвертор валют</h1>
+    <form  method="post">
+        <input type="number" name="count_first">
+        <select>
+            <option value="rub_1">RUB</option>
+            <option value="usd_1">USD</option>
+            <option value="euro_1">EURO</option>
+        </select>
+        <br><br>
+        <input type="number" name="count_second">
+        <select>
+            <option value="rub_2">RUB</option>
+            <option value="usd_2">USD</option>
+            <option value="euro_2">EURO</option>
+        </select>
+    </form>
+    {% endblock %}
+
+
+
